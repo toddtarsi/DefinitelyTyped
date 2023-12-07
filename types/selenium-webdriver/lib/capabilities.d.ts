@@ -1,4 +1,4 @@
-import { logging, ProxyConfig } from "../";
+import { logging } from "../";
 import Symbols from "./symbols";
 
 /**
@@ -202,14 +202,6 @@ export class Capabilities {
     // endregion
 
     // region Methods
-
-    /**
-     * @return {!Object<string, ?>} The JSON representation of this instance.
-     *     Note, the returned object may contain nested promised values.
-     * @suppress {checkTypes} Suppress [] access on a struct (state inherited from
-     *     Map).
-     */
-    [Symbols.serialize](): {};
 
     /**
      * @param {string} key The capability to return.

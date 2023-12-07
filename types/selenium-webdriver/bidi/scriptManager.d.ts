@@ -22,7 +22,7 @@ declare class ScriptManager {
 
     callFunctionInRealm<FUNC extends AnyFunction>(
         realmId: string,
-        functionDeclaration: FUNC,
+        functionDeclaration: string,
         awaitPromise: boolean,
         argumentValueList?: ReferenceValue[] | null,
         thisParameter?: any,
@@ -31,7 +31,7 @@ declare class ScriptManager {
 
     callFunctionInBrowsingContext<FUNC extends AnyFunction>(
         browsingContextId: string,
-        functionDeclaration: FUNC,
+        functionDeclaration: string,
         awaitPromise: boolean,
         argumentValueList?: ReferenceValue[] | null,
         thisParameter?: any,
@@ -113,6 +113,6 @@ declare class ScriptManager {
     getRealmsInBrowsingContextByType(browsingContext: any, type: string): Promise<RealmInfo[]>;
 }
 
-declare function getScriptManagerInstance(browsingContextId: string, driver: Session): ScriptManager;
+declare function getScriptManagerInstance(browsingContextId: string, driver: Session): Promise<ScriptManager>;
 
 export = getScriptManagerInstance;
